@@ -12,8 +12,7 @@ const parent = React.createElement(
         [
             React.createElement("h1", {}, "I am a h1 Tag"),
             React.createElement("h2", {}, "I am a h2 Tag")
-        ]),
-
+        ]), 
 ])
 
 console.log(parent)
