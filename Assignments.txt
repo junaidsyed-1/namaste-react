@@ -1,2 +1,71 @@
+Episode 01 Inception
+
 # What is Emmet?
-- 
+- Emmets are add-on which allow us to use shortcuts for code, and then they expan into full pieces of code.
+
+# Difference between a Library and Framework?
+- A library is a collection of pre-written code that can be used to perform specific tasks.
+  On the other hand, Framework is a pre-written code that provides a structute for developing software applications.
+
+# What is a CDN? Why do we use it?
+- CDN(Content Delivery Network), A CDN is a group of servers that store and deliver digital content such as images, video, and web dev tools etc.
+    We use CDN to reduce latency, CDN can also improve content security,performance and availability.
+
+# What is cross-origin in the script tag?
+- The cross-origin attribute sets the mode of the request to a HTTP CORS request. A cross-origin request is a request for resources e.g., images, fonts, style sheets, etc.
+
+# What is different between React and ReactDOM?
+- React manages the core functionality of the code and handle the operations and structures of the UI, and whereas ReactDOM is responsible for the rendering React components to the DOM(Document Object Model) in a web browser.
+
+# What is different between react.development.js and react.production.js files via CDN?
+- react.development.js is used for the development of the application and it includes various development tools and warnings to catch and diagnose various  issues while developing the application, and whereas react.production.js is used for the production of the application and it is also optimized for performance and smaller bundle size.
+
+Epiose 02 - Ignite our App
+
+# What is NPM?
+- NPM is node module package manager which manages all the packages or dependencies, also NPM does not have a full form.
+
+# What is Parcel/Webpack? Why do we need it?
+- Parcel/Webpack, they are known as bundlers, they help us in so many things, they do so much work behind the scenes like, compressing, minification, bundling, and also provide local server and so many more things.
+   We need them because they help us in bundling our app and combine it in a single package which is production ready.
+
+# What is .parcel_cache?
+- .parcel_cache is a auto-generated folder which is used for caching. Parcel genrate this folder on its own to make the perfomance of the server even more better.
+
+# What is npx?
+- npx is a command to execute a dependency.
+
+# What is differnce between a dependencies and devDependencies?
+-  Dev : Dev dependencies are usually used in development phase.
+   Normal : Normal dependencies are usually used in production phase.
+
+# What is Tree Shaking?
+- Tree shaking is a process also known as "dead code elimination" which performs the elimination of unused code.
+
+# What is Hot Module Replacement(HMR)?
+- When we make changes in our app, by default parcel fully reload the page, but in some cases Parcel use HMR. HMR imporves the development experience by updating the modules at runtime in the browser without needing the whole page reload.
+
+# List down your 5 favourite superpowers of Parcel and describe any 3 of them in your own words.
+- 1. Dev build
+  2. HMR
+  3. Tree Shaking : In production builds,It shakes the tree and removes any unused code generally known as "dead code elimination".
+  4. Caching : Parcel cache everything in a folder 'disk'. When we restart the dev server, Parcel will only rebuild the files if there are any changes. Parcel automatically keeps track of the files, and if there's any change, it will rebuild. By default, it stores the cache in a folder named '.parcel_cache'.
+  5. Minification : Parcel reduces the size of our files, by removing any white spaces and renaming variables to shorter names, and much more.
+
+# What is .gitignore? What should we add and not add into it?
+- .gitignore is a type which is used to to ignore certain files or folder, that should not be pushed in our GitHub Repository.
+   We should never add files or folders that can re-generate themselves, and should add our core code of the app and package.json and package-lock.json.
+
+# Why should i not modify package-lock.json?
+- I should not modify package-lock.json because it keeps the exact version of the dependencies and update according to information we give e.g caret (^) or tilde(~), which means if we give caret(^) then it will only update the minor version of the dependency, on the other hand if we specify tilde(~), then it will update major version of the dependency.
+
+# What is node_modules? Is it a good idea to push that on github?
+- node_modules are a collection of all the dependencies or packages that our require, and no we should never push node_modules to github.
+
+# What is 'dist' folder?
+- 'dist' folder is an auto-generated folder by Parcel, and includes 3 type of files. Parcel converts our original file into more minified and optimized file and put them in dist folder, and the local server which is running by parcel use those files to show our app on the web.
+   Not only parcel create this folder but every other build tools also.
+
+# What is 'browserlists'?
+- browserlists is a dependencies, we can use this dependency to specify that in which versions of the browsers our app must work, It does not mean that it won't work on other versions but it specifies that our app must work on the given versions.
+
