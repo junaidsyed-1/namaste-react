@@ -47,7 +47,7 @@ Epiose 02 - Ignite our App
 
 # List down your 5 favourite superpowers of Parcel and describe any 3 of them in your own words.
 - 1. Dev build
-  2. HMR
+  2. Lazy mode : In development, suppose if we have a huge application with alot of pages in it, then it can be frustating to start the server because it will take some time, but if we specify the command --lazy, the server starts quickly because it will only load the file in the browser to which we navigate, for instance if we are working on home page it will only load home page, but when we visit another page it will load the same.
   3. Tree Shaking : In production builds,It shakes the tree and removes any unused code generally known as "dead code elimination".
   4. Caching : Parcel cache everything in a folder 'disk'. When we restart the dev server, Parcel will only rebuild the files if there are any changes. Parcel automatically keeps track of the files, and if there's any change, it will rebuild. By default, it stores the cache in a folder named '.parcel_cache'.
   5. Minification : Parcel reduces the size of our files, by removing any white spaces and renaming variables to shorter names, and much more.
