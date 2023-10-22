@@ -13,13 +13,9 @@ const Title = () => (
 const HeadingComponent = () => (
     <div className="container">
         <Title />
-        <Title></Title>
-        {Title()}
         <h1 className="heading">This is a React Functional Component</h1>
     </div>
 );
-
-console.log(HeadingComponent)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

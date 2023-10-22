@@ -1,4 +1,4 @@
-Episode 01 Inception
+@Episode 01 Inception
 
 # What is Emmet?
 - Emmets are add-on which allow us to use shortcuts for code, and then they expan into full pieces of code.
@@ -20,7 +20,7 @@ Episode 01 Inception
 # What is different between react.development.js and react.production.js files via CDN?
 - react.development.js is used for the development of the application and it includes various development tools and warnings to catch and diagnose various  issues while developing the application, and whereas react.production.js is used for the production of the application and it is also optimized for performance and smaller bundle size.
 
-Epiose 02 - Ignite our App
+@Epiose 02 - Ignite our App
 
 # What is NPM?
 - NPM is node module package manager which manages all the packages or dependencies, also NPM does not have a full form.
@@ -69,3 +69,18 @@ Epiose 02 - Ignite our App
 # What is 'browserlists'?
 - browserlists is a dependencies, we can use this dependency to specify that in which versions of the browsers our app must work, It does not mean that it won't work on other versions but it specifies that our app must work on the given versions.
 
+@Episode 03 - Laying the foundation
+
+# What is JSX?
+- JSX is a HTML, JS like syntax, which was developed by the Facebook Developers.
+
+# Superpowers of JSX
+- JSX is a very powerful feature in React. One of the superpower of JSX is that, JSX can prevent cross-site scripting attacks(XXS). JSX does not run code blindly,the data is sanitized. When we do API and in some case if the API is attacked, then JSX will not execute the code.
+
+# Role of the 'type' attribute in script tag? What options can i use there?
+- The 'type' attribute is basically used to inform the browser that how to handle and execute the script.
+ -- The options i can use are:
+  1. text/javascript : It is the default script.
+  2. text/html : It indicates the content within the script is HTML not JS.
+  3. module : This type is used to denote modules.
+  4. application/javascript : It is similar to text/javascript, it indicates JS code, It's less commonly used but still supported.
