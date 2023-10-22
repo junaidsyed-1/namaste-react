@@ -1,22 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React Element
-// How can i put React Element inside a component?
-// React Element is what? - It is a object and at the end of the day it is just JavaScript
-const title = (
-    <h1 className="heading" tabIndex="1">
+const Title = () => (
+    <h1 className="title" tabIndex="1">
         Namaste React🚀
     </h1>
 );
 
 // React Functional Component
+// Component Composition - It means that we can call a component inside a component.
+// Also we can call a component using 3 methods.
 const HeadingComponent = () => (
     <div className="container">
-        {title}
-        <h1>This is a React Functional Component</h1>
+        <Title />
+        <Title></Title>
+        {Title()}
+        <h1 className="heading">This is a React Functional Component</h1>
     </div>
 );
+
+console.log(HeadingComponent)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
