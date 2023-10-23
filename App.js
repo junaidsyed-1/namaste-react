@@ -12,7 +12,7 @@ const Title = () => (
 // Also we can call a component using 3 methods.
 const HeadingComponent = () => (
     <div className="container">
-        <Title />
+        {Title()} {/* I can also call a component like this because its just a normal JS function */}
         <h1 className="heading">This is a React Functional Component</h1>
     </div>
 );
