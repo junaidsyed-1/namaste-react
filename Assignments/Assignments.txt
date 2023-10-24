@@ -84,3 +84,44 @@
   2. text/html : It indicates the content within the script is HTML not JS.
   3. module : This type is used to denote modules.
   4. application/javascript : It is similar to text/javascript, it indicates JS code, It's less commonly used but still supported.
+
+@Episode 04 - Talk is cheap, Show me the code
+
+# IS JSX Mandatory for React?
+- JSX is developed by facebook engineers, but JSX is not mandatory for React, although it makes our code much more simpler and readable.JSX is like a HTML, JS like syntax.JSX is not mandatory for React because we can use core React to write code, but the issue is its so messy and unreadable.
+
+# Is ES6 Mandatory for React?
+- In short No, because we can also use old not so old JS concept in React because react at the end of the is JS. Basically, React element is an object and object is what? It's JS.
+
+# How can i write comments in JSX?
+- The simplest way to write comments if we use VS code is (cntrl + /), otherwise we can do use a curly bracket: {/*This is a comment*/}.
+
+# What is <React.Fragment></React.Fragment> and <></>?
+- When we write code inside JSX we need to wrap it our code inside a fragment or a div, otherwise it will give and error. They can also be used to increase the performance of our app.
+
+# What is Virtual DOM?
+- It is basically a representation of the actual DOM in a virtual form. 
+   - Virtual Representation : when changes are made to the web application, they are first made to the virtual DOM rather than manipulating the acutal DOM.
+   - Diffing : After the changes are made to the virtual DOM, a process called 'diffin' is performed. The Virtual DOM is compared to its previous version, and this comparison decides what need to be changed in actual DOM.
+   - Minimal Update : After identifying the changes, the virtual DOM calculates the minimal number of steps needed to update the actual DOM to match the updated Virtual DOM.
+   These steps are knows as reconciliation or diffing.
+   - Update to the Actual DOM : The identified changes are then made to the actual DOM.
+
+# What is Reconciliation in React?
+- It is a process to identify the difference or changes between the old virtual DOM and the new(updated) virtual DOM.
+
+# What is React Fiber?
+- React Fiber is an underlying architectural improvement in React that focuses on performance, error handling and concurrency. It's not something that we need to interact directly with. Instead, it is a part of React architecture designed to enhance the performance and responsiveness.
+
+# Why we need React Keys? When do we need React keys?
+- We need React keys because, if we don't provide key React will re-render all the elements of the component which we are looping through. Suppose if we have 100 cards and then we add another card, then React won't be able to know which card came in and it will re-render all the elements. It also affects the performance of our app.
+        We need React keys when we are looping through the elements of the component.
+
+# Can we use Index as keys in React?
+- It depends on the situation, The best practice is to use some ID as the key. But in some cases there aren't any type of ID then we can use Index. Although, React Developers recommend to not use Index as the key.
+
+# What is props in React?
+- props are also known as properties. In a very simple language, props are just like arguments that we can pass to JS functions. props are used to pass the properties/Info. It returns us an object and an object is what? Its just JS. Whenever we have to dynamically pass data to components, we pass it through props.
+
+# What is Config Driven UI?
+- In simple terms, A website driven by config. It means controlling the UI, how the UI looke using the config/data.
