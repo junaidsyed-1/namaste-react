@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.nav-items {
+  font-size: 18px;
+  margin: 0px 20px;
+}
+
+.nav-items > ul {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  padding: 20px;
+}
+
+.logo-container {
+  margin: 15px;
+  margin-left: 25px;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-card {
+  border: 1px solid black;
+  width: 220px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.res-card-img {
+  width: 100%;
+}
