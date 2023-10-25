@@ -1,7 +1,7 @@
 @Episode 01 Inception
 
 # What is Emmet?
-- Emmets are add-on which allow us to use shortcuts for code, and then they expan into full pieces of code.
+- Emmets are add-on which allow us to use shortcuts for code, and then they expand into full pieces of code.
 
 # Difference between a Library and Framework?
 - A library is a collection of pre-written code that can be used to perform specific tasks.
@@ -60,7 +60,7 @@
 - I should not modify package-lock.json because it keeps the exact version of the dependencies and update according to information we give e.g caret (^) or tilde(~), which means if we give caret(^) then it will only update the minor version of the dependency, on the other hand if we specify tilde(~), then it will update major version of the dependency.
 
 # What is node_modules? Is it a good idea to push that on github?
-- node_modules are a collection of all the dependencies or packages that our require, and no we should never push node_modules to github.
+- node_modules are a collection of all the dependencies or packages that our required, and no we should never push node_modules to github.
 
 # What is 'dist' folder?
 - 'dist' folder is an auto-generated folder by Parcel, and includes 3 type of files. Parcel converts our original file into more minified and optimized file and put them in dist folder, and the local server which is running by parcel use those files to show our app on the web.
