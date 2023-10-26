@@ -57,3 +57,12 @@
 .res-card-img {
   width: 100%;
 }
+
+.res-filter {
+  margin: 10px;
+}
+
+.res-filter > button {
+  padding: 5px;
+  cursor: pointer;
+}
