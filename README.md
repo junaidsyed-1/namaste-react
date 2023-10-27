@@ -48,3 +48,9 @@
 
 - export const Component;
 - import {Component} from "path";
+
+# React Hooks
+
+- Two Most Important Hooks
+- useState() - A state variable
+- useEffect()

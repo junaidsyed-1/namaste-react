@@ -3,7 +3,14 @@ import { useState } from "react";
 import resList from "../utils/mockData";
 
 const Body = () => {
+    // [] this is destructring on the fly
     const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+
+    // We can also do this:
+    // const arr = useState(resList);
+    // const listOfRestaurants = arr[0];
+    // const setListOfRestaurants = arr[1];
+    // This is just normal JS, nothing new
 
     return (
         <div className="body">
