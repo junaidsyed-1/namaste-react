@@ -26,16 +26,16 @@
 - - Logo
 - - Nav Items
 - Body
-- - Search
-- - RestaurantContainer
-- - RestaurantCard
--      - Card Image
--      - Info
+  - Search
+  - RestaurantContainer
+  - RestaurantCard
+    - Card Image
+    - Info
 - Footer
-- - Copyright
-- - Links
-- - Contact
-- - Address
+  - Copyright
+  - Links
+  - Contact
+  - Address
 
 # Two types of Export Import
 

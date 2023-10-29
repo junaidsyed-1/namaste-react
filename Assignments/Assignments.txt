@@ -114,7 +114,7 @@
 - React Fiber is an underlying architectural improvement in React that focuses on performance, error handling and concurrency. It's not something that we need to interact directly with. Instead, it is a part of React architecture designed to enhance the performance and responsiveness.
 
 # Why we need React Keys? When do we need React keys?
-- We need React keys because, if we don't provide key React will re-render all the elements of the component which we are looping through. Suppose if we have 100 cards and then we add another card, then React won't be able to know which card came in and it will re-render all the elements. It also affects the performance of our app.
+- We need React keys because, if we don't provide key React will re-render all the elements of the component which we are looping through. Suppose if we have 100 cards and then we add another card, then React won't be able to know which card came in and it will re-render all tshe elements. It also affects the performance of our app.
         We need React keys when we are looping through the elements of the component.
 
 # Can we use Index as keys in React?
@@ -125,3 +125,19 @@
 
 # What is Config Driven UI?
 - In simple terms, A website driven by config. It means controlling the UI, how the UI looke using the config/data.
+
+@ Epiosde 05 Let's ger Hooked
+
+# What is difference between Named Export, Default export and * as export?
+- Named export : We can do multiple export using named export.
+  Default export : We can do only one export using word default, the word itself says default.
+  But we can use both of the export in a single file.
+
+# What is the importance of config.js file
+- 
+
+# What are React Hooks?
+- Hooks are the superpowers which React allow us to use. Hooks let us use different React features from our components.
+
+# Why do we need a useState Hook?
+- We need useState hook to update the state of the var.Basically when we use useState, and the state of the component changes/update then React will re-render the component and apply the changes made.
