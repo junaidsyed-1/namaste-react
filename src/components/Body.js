@@ -12,13 +12,9 @@ const Body = () => {
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7162534&lng=77.1562594&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json()
-        const structuredData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const structuredData = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setListOfRestaurants(structuredData)
-    }
-
-    // Conditional Rendering
-    if (listOfRestaurants.length === 0) {
-        return <Shimmer />
+        console.log(structuredData)
     }
 
     return (
@@ -27,14 +23,19 @@ const Body = () => {
             <div
                 className="res-filter"
                 onClick={() => {
-                    const topRatedRes = listOfRestaurants.filter(res => res.data.avgRating > 4);
+                    const topRatedRes = listOfRestaurants.filter(res => res.info.avgRating > 4);
                     setListOfRestaurants(topRatedRes);
-                    console.log(listOfRestaurants)
                 }}
             >
                 <button>Top Rated Restaurants</button></div>
             <div className="res-container">
-                {listOfRestaurants.map(restaurant => <RestaurantCard key={restaurant.info.id} resList={restaurant} />)}
+                {
+                    listOfRestaurants && listOfRestaurants.length > 0 ? ((listOfRestaurants.map(restaurant => <RestaurantCard key={restaurant.info.id} resList={restaurant} />
+                    ))
+                    ) : (
+                        <Shimmer />
+                    )
+                }
             </div>
 
         </div>
