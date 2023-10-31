@@ -126,7 +126,7 @@
 # What is Config Driven UI?
 - In simple terms, A website driven by config. It means controlling the UI, how the UI looke using the config/data.
 
-@ Epiosde 05 Let's ger Hooked
+@ Epiosde 05 Let's get Hooked
 
 # What is difference between Named Export, Default export and * as export?
 - Named export : We can do multiple export using named export.

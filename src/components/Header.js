@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constant"
 
 const Header = () => {
+
+    const [btnNameReact, setBtnNameReact] = useState("Login");
+
     return (
         <div className="header">
             <div className="logo-container">
@@ -12,6 +16,11 @@ const Header = () => {
                     <li>About Us</li>
                     <li>Contact Us</li>
                     <li>Cart</li>
+                    <button
+                        onClick={() => {
+                            btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login")
+                        }}
+                        className="login">{btnNameReact}</button>
                 </ul>
             </div>
         </div>
