@@ -141,3 +141,53 @@
 
 # Why do we need a useState Hook?
 - We need useState hook to update the state of the var.Basically when we use useState, and the state of the component changes/update then React will re-render the component and apply the changes made.
+
+@ Episode 06 Exploring The World
+
+# What is a Microservice?
+- Microservices is an architectural style where a complex web application is divided into small services and these services are often referred to as Microservices.Each microservice operate as a separate, self-contained unit and it communicates with other through well defined interfaces such as protocols and APIs.
+
+# What is a Monolith architecture?
+- Monolith architectural style where the whole complex web application is in a single project.
+
+# What is difference between a Microservice and Monolithic architecture?
+- Monolith architecture : 
+   1. In monolithic architecture our whole application is contained in a single unit.
+   2. In monolithic architecture we are limited to use different languages.
+   3. New programmers find it very difficult to code.
+   4. We have to update the whole application even if we need to change the color of just a button, and it can be very heavy pain.
+  Microservice architecture : 
+   1. Whereas in microservice architecture our complex web application is divided into small services and these services are often referred to as Microservices.
+   2. In microservice architecture we can use different languages for different services/unit.
+   3. It is not difficult for new developers to find bugs.
+   4. It is very easy to make changes in any service.
+
+# Why do we need useEffect Hook?
+- What is a hook at the end of day? It's just a normal JS function, which react gave superpowers to it.
+  We need useEffect Hook to make API calls or anything which we need to render after the component is rendered.It allows us to manage side effects in our components.
+
+# What is Optional Chainig?
+- Optional chainig is a process in which instead of showing error it shows undefined or null.
+
+# What is Shimmer UI?
+- Shimmer UI is a fake skeleton of our app which we render until we have successfully made an API call.
+
+# What is the difference between JS expression and JS statement?
+- JS expression:
+  1. JS expression is a piece of code that produces a value.
+  JS statement:
+  1. JS statement is a line of code that performs an action.
+
+# What is conditional rendering?
+- Conditional rendering means to render our component using a condition. for example, 
+  we have component name : <Header /> and a component named <Shimmer /> and we want to render shimmer until our Header gets a response from the API.
+  listOfRes.length == 0 ? <Shimmer> : <Header />
+
+# What is CORS?
+-
+
+# What is async await?
+- async await is functionality which returns a promise. let's say we have an async function and inside of that function we need to wait for a promise to resolve, so we use await keyword to wait for a promise to get resolved.
+
+# What is the use of 'const json = await data.json(); ?
+- It means that we are waiting for the promise to get resolved and once the promise is resolved then we are passing the data in json var in json formalt using .json() function.
