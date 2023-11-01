@@ -14,11 +14,18 @@ const Body = () => {
     }, [])
 
     const fetchData = async () => {
-        const data = await fetch(SWIGGY_API)
-        const json = await data.json()
-        const structuredData = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        setListOfRestaurants(structuredData)
-        setFilteredRestaurant(structuredData)
+        try {
+            const data = await fetch(SWIGGY_API)
+            const json = await data.json()
+            console.log(json)
+            const structuredData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            setListOfRestaurants(structuredData)
+            setFilteredRestaurant(structuredData)
+            console.log("Success")
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -32,7 +39,6 @@ const Body = () => {
                         }} />
                     <button
                         onClick={() => {
-                            console.log(searchText)
                             const filteredRes = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                             setFilteredRestaurant(filteredRes);
                         }}

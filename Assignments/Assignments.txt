@@ -184,7 +184,7 @@
   listOfRes.length == 0 ? <Shimmer> : <Header />
 
 # What is CORS?
--
+- Cross-origin resource sharing (CORS) is a browser mechanism that allows devices on one domain to access resources on other domains
 
 # What is async await?
 - async await is functionality which returns a promise. let's say we have an async function and inside of that function we need to wait for a promise to resolve, so we use await keyword to wait for a promise to get resolved.
