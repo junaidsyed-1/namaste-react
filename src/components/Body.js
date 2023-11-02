@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from 'react-router-dom';
+import { REST_CARD_URL } from '../utils/constant'
 
 const Body = () => {
-    const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7162534&lng=77.1562594&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -15,18 +16,18 @@ const Body = () => {
 
     const fetchData = async () => {
         try {
-            const data = await fetch(SWIGGY_API)
+            const data = await fetch(REST_CARD_URL)
             const json = await data.json()
-            console.log(json)
-            const structuredData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const structuredData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setListOfRestaurants(structuredData)
             setFilteredRestaurant(structuredData)
-            console.log("Success")
 
         } catch (error) {
             console.log(error)
         }
     }
+
+    if (filteredRestaurant.length == 0) return <Shimmer />
 
     return (
         <div className="body">
@@ -49,16 +50,14 @@ const Body = () => {
                     setListOfRestaurants(topRatedRes);
                 }}>Top Rated Restaurants</button></div>
             <div className="res-container">
+
                 {
-                    filteredRestaurant && filteredRestaurant.length > 0 ? ((filteredRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resList={restaurant} />
-                    ))
-                    ) : (
-                        <Shimmer />
-                    )
+                    filteredRestaurant.map((restaurant) => (<Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}> {<RestaurantCard resList={restaurant} />} </Link>))
+
                 }
             </div>
 
-        </div>
+        </div >
     )
 };
 

@@ -54,3 +54,8 @@
 - Two Most Important Hooks
 - useState() - A state variable
 - useEffect()
+
+# Two types of Routin
+
+- Client Side Routing
+- Server Side Routing
