@@ -55,7 +55,7 @@
 - useState() - A state variable
 - useEffect()
 
-# Two types of Routin
+# Two types of Routing
 
 - Client Side Routing
 - Server Side Routing
