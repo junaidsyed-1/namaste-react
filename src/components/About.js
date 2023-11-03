@@ -1,7 +1,6 @@
 import User from './User';
 import React from 'react';
 import UserClass from './UserClass';
-import Test from './Test';
 
 
 class About extends React.Component {
@@ -21,8 +20,6 @@ class About extends React.Component {
             <div id="about">
                 <h1>This is About component</h1>
                 <UserClass name={"First "} location={"Delhi (class)"} />
-                <UserClass name={"Second "} location={"Delhi (class)"} />
-                <Test />
             </div>
         )
     }
@@ -39,13 +36,9 @@ class About extends React.Component {
     - Second child Constructor
     - Second child Render 
 
-    - Test Constructor
-    - Test Render
-
     This is the Commit Phase
     - First child componentDidMount
     - Second child componentDidMount
-    - Test componentDidMount
 
 - Parent ComponentDidMount
 
