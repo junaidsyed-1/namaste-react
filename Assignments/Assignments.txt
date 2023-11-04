@@ -206,3 +206,20 @@
 # What is difference between Client Side Routing and Server Side Routing?
 - Client Side Routing : Unlike Server Side Routing, the response is received once and then the user can visit the different pages of the website without even needing to load the application.
   Server Side Routing : The traditional way to create a website was to make separate files, for instance., index.html, about.html etc. and then when the user visits the website and surfe through different pages our website used to request data from the server again whenever the user cahnges the page and gets the response.
+
+  @ Episode 08 - Let's get Classy
+
+  # How do you create Nested Routes in reat-router-dom configuration?
+  - First we need create createBrowserRoute and then we need to create a parent route and inside that parent we need to pass a property named children, and inside children we create Nested Route just like normal route, For example, children : [{path:'/', element:'component'}].
+
+# Why do we use componentDidMount?
+- We need componentDidMount to render things after the initial render. In most cases we use componentDidMount to make an API call, because when our web application loads first we render our component with fake skeleton (shimmer) so that our app does not look empty and also API takes some time to get a response, so after our component is rendered and then we make an API call and fill the data inside the component.
+
+# Why do we use componentWillUnmount?
+- We use componentWillUnmount after we leave the page, the most case use of componentWillUnmount is to clear the code which can be hanging in our browser. For instance., if we have a setInterval or setTimeout.
+
+# Why do we use super(props) in constructor?
+- We use super(props) in constructor because it allows us to access 'this.props' keyword.
+
+# Why can't we have the callback function of useEffect async?
+- useEffect is synchronous and it handles the lifecycle events such as update and unmounting, using asynchrony might break these expectations and lead to unexpected behaviour and can also lead to unpredictable re-renders which is a bad thing.
