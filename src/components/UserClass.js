@@ -11,30 +11,28 @@ class UserClass extends React.Component {
                 login: "Default",
                 bio: "Bio",
             },
-            count: 0
         }
-        // console.log("Constructor");
+        console.log("Constructor");
     };
 
     componentDidMount() {
-        // console.log("Component Did Mount")
+        console.log("Component Did Mount")
+        this.timer = setInterval(() => {
+            console.log("Timer")
+        }, 1000)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.state.count !== prevState.count) {
-            console.log(prevState)
-            // console.log(this.state)
-            console.log("Count Updated:", this.state.count)
-        }
-        // console.log("Component Did Update");
+        console.log("Component Did Update");
     }
 
     componentWillUnmount() {
-        // console.log("Component Will Unmount");
+        console.log("Component Will Unmount");
+        clearInterval(this.timer);
     }
 
     render() {
-        // console.log("Render")
+        console.log("Render")
         const { name, location, login, avatar_url, bio } = this.state.userInfo;
 
         return (
@@ -44,13 +42,6 @@ class UserClass extends React.Component {
                 <h3>Location : {location}</h3>
                 <h4>GitHub UserName: {login}</h4>
                 <p>Bio: {bio}</p>
-                <button onClick={() => {
-                    this.setState((prevState) => ({
-                        count: prevState.count + 1,
-                    }));
-                }}>Update</button>
-                <h1>{this.state.count}</h1>
-
             </div >
         )
     }
