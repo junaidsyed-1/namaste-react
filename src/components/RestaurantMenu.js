@@ -1,29 +1,18 @@
-import { useEffect, useState } from "react";
 import Shimmer from './Shimmer'
 import { useParams } from "react-router-dom";
-import { MENU_URL } from "../utils/constant";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null)
 
-    const param = useParams();
-    const restId = param.id
+    const restId = useParams();
 
-    useEffect(() => {
-        fetchMenu();
-    }, []);
-
-
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_URL + restId);
-        const json = await data.json();
-        setResInfo(json?.data)
-    };
+    const resInfo = useRestaurantMenu(restId?.id)
 
     if (resInfo === null || 0) return <Shimmer />
 
     const { name, cuisines } = resInfo.cards[0].card.card.info;
-    const itemCards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card.itemCards || resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.itemCards;
+
+    const itemCards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[0].card.card.itemCards || resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card.itemCards || resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.itemCards || resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3].card.card.itemCards;
 
 
     return (

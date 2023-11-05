@@ -1,25 +1,27 @@
 import React from 'react';
+import Shimmer from './Shimmer';
 
 class UserClass extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            userInfo: {
-                name: "John Doe",
-                location: "Default",
-                login: "Default",
-                bio: "Bio",
-            },
+            users: [],
         }
         console.log("Constructor");
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         console.log("Component Did Mount")
-        this.timer = setInterval(() => {
-            console.log("Timer")
-        }, 1000)
+        // this.timer = setInterval(() => {
+        //     console.log("Timer")
+        // }, 1000)
+        // API
+        const data = await fetch("https://dummyjson.com/users");
+        const json = await data.json();
+        this.setState({
+            users: json?.users,
+        })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -28,20 +30,26 @@ class UserClass extends React.Component {
 
     componentWillUnmount() {
         console.log("Component Will Unmount");
-        clearInterval(this.timer);
+        // clearInterval(this.timer);
     }
+
 
     render() {
         console.log("Render")
-        const { name, location, login, avatar_url, bio } = this.state.userInfo;
+        if (this.state.users.length == 0) return <Shimmer />
 
         return (
-            <div className="user-card">
-                <img src={avatar_url} alt="" />
-                <h2>Name : {name}</h2>
-                <h3>Location : {location}</h3>
-                <h4>GitHub UserName: {login}</h4>
-                <p>Bio: {bio}</p>
+            <div className="container">
+                {this.state.users.map((user) => {
+                    return <div className="user-card" key={user.id}>
+                        <h2>firstName : {user.firstName}</h2>
+                        <h3>LastName : {user.lastName}</h3>
+                        <h4>Age: {user.age}</h4>
+                        <p>Address: {user.address.address}, {user.address.city}</p>
+                    </div>
+                })}
+
+
             </div >
         )
     }
