@@ -1,15 +1,20 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from 'react-router-dom';
 import useBody from "../utils/useBody";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
+    const onlineStatus = useOnlineStatus();
 
-    const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } = useBody()
+    const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } = useBody();
 
     if (filteredRestaurant === null) { return <Shimmer /> }
+
+    if (onlineStatus === false) return <h1>It looks like you'r offline</h1>
+
     return (
         <div className="body">
             <h1 style={{ textAlign: 'center' }}>Top Restaurants</h1>

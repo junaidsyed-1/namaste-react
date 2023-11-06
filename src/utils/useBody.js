@@ -31,7 +31,7 @@ const useBody = (onFilter) => {
         }
     }, [listOfRestaurants, onFilter]);
 
-    return { filteredRestaurant, setFilteredRestaurant, listOfRestaurants };
+    return { listOfRestaurants, filteredRestaurant, setFilteredRestaurant };
 };
 
 export default useBody;
