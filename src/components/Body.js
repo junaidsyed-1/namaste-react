@@ -16,15 +16,15 @@ const Body = () => {
     if (onlineStatus === false) return <h1>It looks like you'r offline</h1>
 
     return (
-        <div className="body">
-            <h1 style={{ textAlign: 'center' }}>Top Restaurants</h1>
-            <div className="res-filter">
+        <div className="box-border mx-auto p-4 my-2">
+            <h1 className="text-center l text-3xl font-bold p-4">Top Restaurants</h1>
+            <div className="px-4 my-2">
                 <div className="search">
-                    <input className="search-box" type="text" value={searchText}
+                    <input className="border-2 border-solid border-black rounded-xl px-3" type="text" value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
-                    <button
+                    <button className="bg-red-300 px-4 mx-4 py-1 hover:bg-red-600 transition-all shadow-lg"
                         onClick={() => {
                             const filteredRes = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                             setFilteredRestaurant(filteredRes)
@@ -32,10 +32,10 @@ const Body = () => {
                     >Search</button>
                 </div>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap justify-between">
 
                 {
-                    filteredRestaurant.map((restaurant) => (<Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}> {<RestaurantCard resList={restaurant} />} </Link>))
+                    filteredRestaurant.map((restaurant) => (<div className="my-4"> <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}> {<RestaurantCard resList={restaurant} />} </Link></div>))
 
                 }
             </div>

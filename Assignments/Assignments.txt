@@ -223,3 +223,19 @@
 
 # Why can't we have the callback function of useEffect async?
 - useEffect is synchronous and it handles the lifecycle events such as update and unmounting, using asynchrony might break these expectations and lead to unexpected behaviour and can also lead to unpredictable re-renders which is a bad thing.
+
+@ Epiosde 09 - Let's optimize our app
+
+# When and why do we need lazy()?
+- We need lazy() when we have a huge or mid sized application which has alot of component in it. We need lazy(), so that we can optimize our app even more, Bundlers, they minify our code into a single js file and suppose if we have 1000s of components then the file would be very huge and it will compromise the performance, So what we do is, We use chunking and React provides lazy() fucntion(which returns a promise) in order to do that.
+
+# What is suspense?
+- Suspense is component provided by React, and we need to wrap our component inside Suspense component with lazy(), because React quickly renders things and if we do not provide Suspense it will throw error because while our component was loading React rendered and it had nothing to render so it gave error. Suspense takes a fallback which can be anything let's say Shimmer UI, until it loads the component it will render Shimmer UI, because React is so fast it needs something to render.
+
+# Advantages and Disadvantages of using this code splitting?
+- Advantages: 
+  1. We can bundle our app into small files, which will enhace the performance
+  2. Our app is much more lighter.
+  Disadvantages:
+  1.Complex Configuration
+  2. Webpack and Build Tool Dependencies
