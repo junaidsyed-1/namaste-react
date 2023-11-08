@@ -8,7 +8,7 @@ const RestaurantMenu = () => {
 
     const restId = useParams();
 
-    const [showIndex, setShowIndex] = useState(null);
+    const [showIndex, setShowIndex] = useState(0);
 
     const resInfo = useRestaurantMenu(restId?.id)
 
@@ -33,7 +33,6 @@ const RestaurantMenu = () => {
                         showItem={index === showIndex}
                         setShowIndex={() => setShowIndex(index)}
                         hideItem={() => setShowIndex(false)}
-                        index={index}
                     />)}
             </div>
         </>

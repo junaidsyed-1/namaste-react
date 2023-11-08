@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ItemList from "./ItemList";
 
 const RestaurantCategory = ({ data, showItem, setShowIndex, hideItem }) => {
@@ -8,11 +7,11 @@ const RestaurantCategory = ({ data, showItem, setShowIndex, hideItem }) => {
 
         if (showItem === true) {
             hideItem()
-            console.log("h")
         } else {
 
             setShowIndex()
-        }
+        };
+
     }
 
     return (
@@ -20,7 +19,7 @@ const RestaurantCategory = ({ data, showItem, setShowIndex, hideItem }) => {
             {/* Accordian Title */}
             <div className="p-5 m-2  bg-slate-100 shadow-xl">
                 <div className="font-extrabold flex justify-between cursor-pointer" onClick={handlClick}>
-                    <span>
+                    <span className="select-none">
                         {data?.title} ({data?.itemCards.length})
                     </span>
                     <span>{!showItem ? "🔽" : "🔼"}</span>
