@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     const { cuisines, name, sla, avgRating, cloudinaryImageId } = info;
 
     return (
-        <div className="p-4 w-56 bg-slate-100 h-full m-4 hover:bg-slate-300 transition-all">
+        <div className="p-4 m-4 w-56 bg-slate-100  hover:bg-slate-300 transition-all h-fit" >
             <img className="w-full rounded-xl h-48" src={CDN_URL + cloudinaryImageId} />
             <h3 className="font-bold my-2 text-lg">{name}</h3>
             <h4 className="">{cuisines.join(', ')}</h4>
@@ -15,5 +15,19 @@ const RestaurantCard = (props) => {
         </div>
     )
 };
+
+// Higher Order Function
+
+export const isOpenNow = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-black text-white text-xs p-2 mx-2 rounded-lg">Open</label>
+                <RestaurantCard {...props} />
+            </div>
+        )
+    }
+
+}
 
 export default RestaurantCard;

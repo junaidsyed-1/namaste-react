@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { isOpenNow } from "./RestaurantCard";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from 'react-router-dom';
@@ -8,6 +8,8 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
     const [searchText, setSearchText] = useState("");
     const onlineStatus = useOnlineStatus();
+
+    const RestaurantCardOpen = isOpenNow(RestaurantCard)
 
     const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } = useBody();
 
@@ -24,7 +26,7 @@ const Body = () => {
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
-                    <button className="bg-red-300 px-4 mx-4 py-1 hover:bg-red-600 transition-all shadow-lg"
+                    <button className="bg-yellow-200 px-4 mx-4 py-1 hover:bg-[#FFA000] hover:text-white transition-all shadow-lg"
                         onClick={() => {
                             const filteredRes = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                             setFilteredRestaurant(filteredRes)
@@ -32,10 +34,15 @@ const Body = () => {
                     >Search</button>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-wrap ">
 
                 {
-                    filteredRestaurant.map((restaurant) => (<div className="my-4"> <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}> {<RestaurantCard resList={restaurant} />} </Link></div>))
+                    filteredRestaurant.map((restaurant) => (<div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {
+                        restaurant.info.isOpen ?
+                            <RestaurantCardOpen resList={restaurant} /> :
+                            <RestaurantCard resList={restaurant} />
+                    }
+                    </Link></div>))
 
                 }
             </div>
