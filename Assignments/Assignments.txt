@@ -239,3 +239,18 @@
   Disadvantages:
   1.Complex Configuration
   2. Webpack and Build Tool Dependencies
+
+@ Epiosde 11 -Data is the new Oil
+
+# What is prop drilling?
+- prop drilling means to drill the prop from parent to its children. Suppose we have a parent component and it has 10 children components and if we the 9th component want to use something from the parent then we have to pass the props from the parent to each child component.
+
+# What is lifting the state up?
+- It kinda means to lift the state from the child component to the closest parent component and then pass it to the child component through props and it also known as controlled component. Which Basically means instead of child component controlling its own state, we give that power to the closest parent component and then pass it to the child component.
+
+# What are Context Provider and Context Consumer?
+- Context Provider means to provide the context to anywhere in the application where you provide it.
+  Context Consumer is an old way to use context in class based function.
+
+# if you don't pass a value to the provider, does it take the default value?
+- You have to pass the value prop to the provider otherwise it will throw an error or give you a warning for missing prop value.The default value specified in createContext is used only when there is no matching UserContext.Provider in the component tree.
