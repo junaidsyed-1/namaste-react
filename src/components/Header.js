@@ -1,17 +1,19 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login");
     const onlineStatus = useOnlineStatus();
 
-    const { loggedInUser } = useContext(UserContext)
+    // Selector = Redux Hook
+    const cart = useSelector((store) => store.cart.item)
+    console.log(cart)
 
     return (
-        <header className="header flex justify-between p-5 items-center lg:bg-[#FFA000] text-slate-50 shadow-xl">
+        <header className="header flex justify-between p-5 items-center lg:bg-[#FFA000] text-slate-50 shadow-xl dark:bg-slate-800">
             <div className="logo-container">
                 <img className="w-20" src={LOGO_URL} />
             </div>
@@ -22,14 +24,12 @@ const Header = () => {
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/about">About Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/grocery">Grocery</Link></li>
-                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/">Cart</Link></li>
+                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/">Cart - <b>({cart.length} Items)</b></Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><button
                         onClick={() => {
                             btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login")
                         }}
                         className="login">{btnNameReact}</button></li>
-                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/">{loggedInUser}</Link></li>
-
                 </ul>
             </div>
         </header >

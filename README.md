@@ -23,8 +23,8 @@
 # Components we need to build our Food Ordering App
 
 - Header
-- - Logo
-- - Nav Items
+- Logo
+- Nav Items
 - Body
   - Search
   - RestaurantContainer
@@ -59,3 +59,12 @@
 
 - Client Side Routing
 - Server Side Routing
+
+# Redux Toolkit and React Redux
+
+- npm install
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
