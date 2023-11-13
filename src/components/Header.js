@@ -9,6 +9,7 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     // Selector = Redux Hook
+    // Subscribing to the store
     const cart = useSelector((store) => store.cart.item)
     console.log(cart)
 
