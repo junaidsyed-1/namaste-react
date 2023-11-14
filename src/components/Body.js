@@ -16,12 +16,12 @@ const Body = () => {
 
     const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } = useBody();
 
-    if (filteredRestaurant === null) { return <Shimmer /> }
+    if (filteredRestaurant === null || filteredRestaurant === undefined || filteredRestaurant.length === 0) return <Shimmer />
 
     if (onlineStatus === false) return <h1>It looks like you'r offline</h1>
 
     return (
-        <div className="box-border mx-auto p-4 my-2">
+        <div className="box-border mx-auto p-4 my-2 w-full">
             <h1 className="text-center l text-3xl font-bold p-4">Top Restaurants</h1>
             <div className="px-4 my-2">
                 <div className="search flex">
@@ -39,7 +39,7 @@ const Body = () => {
                     {/* <div className="ml-20">User Name: <input type="text" className="border border-black px-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} /></div> */}
                 </div>
             </div>
-            <div className="flex flex-wrap ">
+            <div className="flex flex-wrap mx-auto ">
 
                 {
                     filteredRestaurant.map((restaurant) => (<div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {

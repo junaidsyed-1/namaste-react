@@ -11,7 +11,7 @@ const Header = () => {
     // Selector = Redux Hook
     // Subscribing to the store
     const cartItem = useSelector((store) => store.cart.item)
-    console.log(cartItem);
+    // console.log(cartItem);
 
 
     return (
