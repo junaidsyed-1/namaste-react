@@ -1,14 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { CDN_URL } from '../utils/constant';
-import { addItem } from '../utils/cartSlice'
+import { addItem, removeItem } from '../utils/cartSlice'
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, action }) => {
 
     const dispatch = useDispatch()
 
-    const handleAddItem = () => {
+    const handleAddItem = (item) => {
         // Dispatch an action
-        dispatch(addItem())
+        dispatch(addItem(item));
+    }
+    const handleRemoveItem = (item) => {
+        // Dispatch an action
+        dispatch(removeItem());
     }
 
     return (
@@ -21,15 +25,23 @@ const ItemList = ({ items }) => {
                             <span className="font-semibold text-sm">₹{item.card.info.price / 100}</span>
                         </div>
                         <div className="">
-                            <button
-                                onClick={handleAddItem}
-                                className='absolute bg-slate-600 text-sm p-2 px-2 text-white rounded-lg mx-12 hover:shadow-lg hover:transition-all'>Add +</button>
+                            {action ?
+                                <button
+                                    onClick={() => handleRemoveItem(item)}
+                                    className='absolute bg-slate-600 text-sm p-2 px-2 text-white rounded-lg mx-12 hover:shadow-lg hover:transition-all'>
+                                    Remove</button> :
+                                <button
+                                    onClick={() => handleAddItem(item)}
+                                    className='absolute bg-slate-600 text-sm p-2 px-2 text-white rounded-lg mx-12 hover:shadow-lg hover:transition-all'>
+                                    Add +</button>
+                            }
                             <img src={CDN_URL + item.card.info.imageId} alt="Image" className="rounded-lg w-40" />
                         </div>
                     </div>
                 </div>
-            </div>))}
-        </div>
+            </div>))
+            }
+        </div >
     )
 };
 

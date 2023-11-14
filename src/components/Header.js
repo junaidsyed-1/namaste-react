@@ -10,8 +10,9 @@ const Header = () => {
 
     // Selector = Redux Hook
     // Subscribing to the store
-    const cart = useSelector((store) => store.cart.item)
-    console.log(cart)
+    const cartItem = useSelector((store) => store.cart.item)
+    console.log(cartItem);
+
 
     return (
         <header className="header flex justify-between p-5 items-center lg:bg-[#FFA000] text-slate-50 shadow-xl dark:bg-slate-800">
@@ -25,7 +26,7 @@ const Header = () => {
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/about">About Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/grocery">Grocery</Link></li>
-                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/">Cart - <b>({cart.length} Items)</b></Link></li>
+                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/cart">Cart - <b>({cartItem.length} Items)</b></Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><button
                         onClick={() => {
                             btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login")

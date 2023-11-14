@@ -15,7 +15,7 @@ const useBody = (onFilter) => {
         const data = await fetch(REST_CARD_URL)
         const json = await data.json()
 
-        const structuredData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const structuredData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
         setListOfRestaurants(structuredData)
         setFilteredRestaurant(structuredData)
