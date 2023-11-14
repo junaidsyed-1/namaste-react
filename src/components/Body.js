@@ -29,7 +29,7 @@ const Body = () => {
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
-                    <button className="bg-yellow-200 px-4 mx-4 py-1 hover:bg-[#FFA000] hover:text-white transition-all shadow-lg"
+                    <button className="bg-yellow-200 rounded-lg px-4 mx-4 py-1 hover:bg-[#FFA000] hover:text-white transition-all shadow-lg"
                         onClick={() => {
                             const filteredRes = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                             setFilteredRestaurant(filteredRes)
@@ -42,12 +42,13 @@ const Body = () => {
             <div className="flex flex-wrap mx-auto ">
 
                 {
-                    filteredRestaurant.map((restaurant) => (<div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {
-                        restaurant.info.isOpen ?
-                            <RestaurantCardOpen resList={restaurant} /> :
-                            <RestaurantCard resList={restaurant} />
-                    }
-                    </Link></div>))
+                    filteredRestaurant.map((restaurant) => (
+                        <div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {
+                            restaurant.info.isOpen ?
+                                <RestaurantCardOpen resList={restaurant} /> :
+                                <RestaurantCard resList={restaurant} />
+                        }
+                        </Link></div>))
 
                 }
             </div>

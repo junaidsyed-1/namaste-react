@@ -254,3 +254,50 @@
 
 # if you don't pass a value to the provider, does it take the default value?
 - You have to pass the value prop to the provider otherwise it will throw an error or give you a warning for missing prop value.The default value specified in createContext is used only when there is no matching UserContext.Provider in the component tree.
+
+@ Episode 12 - Let's build our store
+
+# What is Redux?
+- Redux is basically like big object which has a lot of data in it. It is like a store which contains the global state which can be accessed anywhere in the tree of our app.
+
+# useContext vs Redux
+- useContext :
+   1. useContext is a React Hook.
+   2. It is used to share the data.
+   3. Changes are made with the Context Value.
+   4. We can change the state in it.
+   5. It is perfect for small and medium sized applications.
+   6. It is easy to Understand.
+- Redux :
+   1. Redux is JS library for managing state.
+   2. It is used to manage data and state.
+   3. Changes are made with the pure function which is Reducer.
+   4. We can not directly Mutate the state.(In the updated version(RTK), We have to MUTATE the state).
+   5. It is perfect for large scale applications.
+   6. It comes with a lot of initial learning curve and it is kind of complex.
+  
+# Advantages of using ReduxToolkit over Redux.
+- 1. RTK is much more simpler than Redux Core.
+  2. There are many chances to make mistakes in Redux core, RTK has solved this issue.
+  3. Creating stores are very simple.
+  4. We can create Slices for each part of our app.
+  5. We can Mutaute the state directly.(Immer takes care of that Behind the scenes).
+
+# Explain Dispatcher
+- Whenever we want to make something happen based on User Interaction we dispatch an action. Suppose a button is clicked and when it is clicked it dispatches an action which called the reducer function and then update happens.
+
+# Explain Slice.
+- Slices are pieces of our app which we eventually store in our store. We can have different slices for different components, for instance, we can have a theme slice, a user slice, and much more.
+
+# Explain Selector.
+- Selector means subscring to the store, We use selector to read data which means that our app is in syc with our store, and whenever our data changes our component which are subscribed changes automagically.
+
+# Explain createSlice and the configuration it takes.
+- In order to create a slice we need to import createSlice from @reduxjs/toolkit,
+  and then we need to name our slice const themeSlice = createSlice({}),
+  and now in the object it takes: name, initalState, reducers and lastly we need to export them,
+  we need to export our reducer and actions.
+  export const {addItem,removeItem} = themeSlice.actions;
+  export default themeSlice.reducer;
+
+
