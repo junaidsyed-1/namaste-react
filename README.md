@@ -74,3 +74,11 @@
 - Unit testing
 - Integration testing
 - End 2 End testing (E2E)
+
+# Setting up testing
+
+- Installed React-testing-library
+- Installed jest
+- Installed Babel dep(from jest website)
+- Created a config file for babel (babel.config.js)
+- Created .parcelrc file to disable Babel transpilation in Parcel because it was conflicting with babel.config
