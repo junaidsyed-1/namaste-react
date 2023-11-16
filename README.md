@@ -68,3 +68,9 @@
 - Slice (cartSlice)
 - dispatch(action)
 - Selector
+
+# Types of Testing (Developer)
+
+- Unit testing
+- Integration testing
+- End 2 End testing (E2E)
