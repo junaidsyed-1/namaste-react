@@ -82,3 +82,5 @@
 - Installed Babel dep(from jest website)
 - Created a config file for babel (babel.config.js)
 - Created .parcelrc file to disable Babel transpilation in Parcel because it was conflicting with babel.config
+- Jest Configuration (npx jest --init)
+- Installed jsdom library
