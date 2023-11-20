@@ -31,4 +31,14 @@ test("Should load the input placeHolder name inside contact component", () => {
     const inputName = screen.getByPlaceholderText('name');
 
     expect(inputName).toBeInTheDocument();
+});
+
+test("Should load 2 input boxes inside contact component", async () => {
+    render(<Contact />);
+
+    const inputBoxes = await screen.findAllByRole('textbox');
+
+    console.log(inputBoxes.length);
+
+    expect(inputBoxes.length).toBeGreaterThanOrEqual(2);
 })
