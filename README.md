@@ -84,3 +84,6 @@
 - Created .parcelrc file to disable Babel transpilation in Parcel because it was conflicting with babel.config
 - Jest Configuration (npx jest --init)
 - Installed jsdom library
+- Install @babel/preset-react (to enabel jsx for testing)
+  - and also configure the babel.config file to be runtime : automatic in the preset.
+- Install @testing-library/jest-dom to use matchers
