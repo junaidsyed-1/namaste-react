@@ -3,7 +3,6 @@ import RestaurantCard from "../RestaurantCard";
 import MOCK_DATA from '../mocks/restaurantCard.json';
 import "@testing-library/jest-dom";
 import { isOpenNow } from "../RestaurantCard";
-import RestaurantCardOpen from "../RestaurantCard"
 
 
 it("should render restaurant card component with props data", () => {
@@ -16,7 +15,7 @@ it("should render restaurant card component with props data", () => {
 
 });
 
-it("should render isOpenNow component which is a higher order function", () => {
+it("should render isOpenNow function which is a higher order component", () => {
 
     const RestaurantCardOpen = isOpenNow(RestaurantCard)
 
