@@ -25,7 +25,9 @@ const Body = () => {
             <h1 className="text-center l text-3xl font-bold p-4">Top Restaurants</h1>
             <div className="px-4 my-2 lg:container mx-auto">
                 <div className="search flex">
-                    <input className="border-2 border-solid border-black rounded-xl px-3" type="text" value={searchText}
+                    <input
+                        data-testid="seachInput"
+                        className="border-2 border-solid border-black rounded-xl px-3" type="text" value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />

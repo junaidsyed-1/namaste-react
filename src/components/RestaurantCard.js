@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
     const { loggedInUser } = useContext(UserContext);
 
     return (
-        <div className="p-4 m-4  bg-slate-100  hover:bg-slate-300 transition-all h-fit" >
+        <div data-testid="resCards" className="p-4 m-4  bg-slate-100  hover:bg-slate-300 transition-all h-fit" >
             <img className="w-screen rounded-xl h-48" src={CDN_URL + cloudinaryImageId} />
             <h3 className="font-bold my-2 text-lg">{name}</h3>
             <h4 className="">{cuisines.join(', ')}</h4>
@@ -27,7 +27,7 @@ const RestaurantCard = (props) => {
 export const isOpenNow = (RestaurantCard) => {
     return (props) => {
         return (
-            <div>
+            <div >
                 <label className="absolute bg-black text-white text-xs p-2 mx-2 rounded-lg">Open</label>
                 <RestaurantCard {...props} />
             </div>
