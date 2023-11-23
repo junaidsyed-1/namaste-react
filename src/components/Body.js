@@ -21,9 +21,9 @@ const Body = () => {
     if (onlineStatus === false) return <h1>It looks like you'r offline</h1>
 
     return (
-        <div className="box-border mx-auto p-4 my-2 w-full">
+        <div className="box-border mx-auto p-4 my-2 w-full ">
             <h1 className="text-center l text-3xl font-bold p-4">Top Restaurants</h1>
-            <div className="px-4 my-2">
+            <div className="px-4 my-2 lg:container mx-auto">
                 <div className="search flex">
                     <input className="border-2 border-solid border-black rounded-xl px-3" type="text" value={searchText}
                         onChange={(e) => {
@@ -39,18 +39,20 @@ const Body = () => {
                     {/* <div className="ml-20">User Name: <input type="text" className="border border-black px-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} /></div> */}
                 </div>
             </div>
-            <div className="flex flex-wrap mx-auto ">
+            <div className="lg:container mx-auto p-0 m-0">
+                <div className="md:grid items-start grid-cols-4 md:container sm:block sm:mx-auto">
 
-                {
-                    filteredRestaurant.map((restaurant) => (
-                        <div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {
-                            restaurant.info.isOpen ?
-                                <RestaurantCardOpen resList={restaurant} /> :
-                                <RestaurantCard resList={restaurant} />
-                        }
-                        </Link></div>))
+                    {
+                        filteredRestaurant.map((restaurant) => (
+                            <div className="my-4" key={restaurant.info.id}> <Link to={"/restaurant/" + restaurant.info.id}> {
+                                restaurant.info.isOpen ?
+                                    <RestaurantCardOpen resList={restaurant} /> :
+                                    <RestaurantCard resList={restaurant} />
+                            }
+                            </Link></div>))
 
-                }
+                    }
+                </div>
             </div>
 
         </div >
