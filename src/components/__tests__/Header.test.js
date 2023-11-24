@@ -35,7 +35,7 @@ describe("Test Cases for Header Component", () => {
             </BrowserRouter>
         )
 
-        const cartItems = screen.getByText('Cart -')
+        const cartItems = screen.getByText('Cart - (0 Items)')
         expect(cartItems).toBeInTheDocument();
 
     });

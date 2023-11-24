@@ -26,7 +26,7 @@ const Header = () => {
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/about">About Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/grocery">Grocery</Link></li>
-                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/cart">Cart - <b>({cartItem.length} Items)</b></Link></li>
+                    <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/cart">Cart - ({cartItem.length} Items)</Link></li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><button
                         onClick={() => {
                             btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login")
