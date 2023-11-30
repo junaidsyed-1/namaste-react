@@ -73,7 +73,7 @@ describe("It should load the Menu Items and it should add the items to the cart,
 
         // After clearing the cart the length should be now 6
         expect(screen.getAllByTestId('foodItems').length).toBe(6);
-        
+
     });
 
 });
