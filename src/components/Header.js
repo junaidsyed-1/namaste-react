@@ -19,7 +19,7 @@ const Header = () => {
             <div className="logo-container">
                 <img className="w-20" src={LOGO_URL} />
             </div>
-            <div className="flex">
+            <div className="lg:flex hidden">
                 <ul className="flex mx-5">
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in">Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
                     <li className="px-4 hover:text-slate-300 transition .5s ease-in"><Link to="/">Home</Link></li>
