@@ -60,7 +60,6 @@ const Body = () => {
                                     <RestaurantCard resList={restaurant} />
                             }
                             </Link></div>))
-
                     }
                 </div>
             </div>
